@@ -1,17 +1,23 @@
 {
-  "name": "01_REST_API",
+  "name": "rest-api",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
-    "mysql": "^2.17.1"
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.3",
+    "mysql2": "^3.20.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.5.0",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^6.0.2"
   }
 }
