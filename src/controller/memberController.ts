@@ -15,9 +15,9 @@ class MemberController {
         return MemberController.instance;
     }
 
-    public select(req:Request, res:Response, next: NextFunction) {
+    async select(req:Request, res:Response, next: NextFunction) {
         try{
-            const list = memberModels.select();
+            const list = await memberModels.select();
             if(!list) return res.status(404).json(errorResponse("NOT_FOUND", "데이터를 찾을 수 없습니다."));
             res.json(success(list));
         }catch(e){
@@ -25,10 +25,10 @@ class MemberController {
         }
     } 
 
-    public selectById(req:Request, res:Response, next: NextFunction) {
+    async selectById(req:Request, res:Response, next: NextFunction) {
         try{
-            const {id} = req.body
-             const entity = memberModels.selectById(id);
+            const id =  Number(req.params.id);
+             const entity = await memberModels.selectById(id);
             if(!entity) return res.status(404).json(errorResponse("NOT_FOUND", "회원을 찾을 수 없습니다."));
             res.json(success(entity));
         }catch(e){

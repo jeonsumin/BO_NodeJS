@@ -1,0 +1,28 @@
+### select
+GET http://localhost:9000/api/member
+
+### selectById
+GET http://localhost:9000/api/member/13
+
+### insert
+POST http://localhost:9000/api/member
+Content-Type: application/json
+
+{
+  "name": "test111",
+  "phoneNum": "010-0000-1111"
+}
+
+### update
+PUT http://localhost:9000/api/member/24
+Content-Type: application/json
+
+{
+  "name": "update 111",
+  "phoneNum" : "010-9999-0000"
+}
+
+### Delete
+
+DELETE http://localhost:9000/api/member/24
+

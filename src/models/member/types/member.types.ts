@@ -1,27 +1,29 @@
-import { RowDataPacket } from "mysql2";
+import {RowDataPacket} from "mysql2";
 
-export interface MemberRow extends RowDataPacket{
-    ID:number,
-    NAME:string,
-    EMAIL:string,
-    CREATE_DT:string,
-    UPDT_DT:string,
+export interface MemberRow extends RowDataPacket {
+    IDX: number,
+    USER_CODE: string,
+    NICK_NAME: string,
+    PHONE_NUM: string,
+    REG_DATE: string,
+    UPDATE_DATE: string,
 }
 
-export interface Member{
-    id:number;
+export interface Member {
+    id: number;
     name: string;
-    email: string;
+    phoneNum: string;
     createDt: string;
     updateDt: string;
 }
 
-export function toMember(row: MemberRow){
-return {
-    id: row.ID,
-    name: row.NAME,
-    email:row.EMAIL,
-    createDt: row.CREATE_DT,
-    updateDt: row.UPDT_DT
-}
+export function toMember(row: MemberRow) {
+    return {
+        id: row.IDX,
+        userCode: row.USER_CODE,
+        name: row.NICK_NAME,
+        phoneNum: row.PHONE_NUM,
+        createDt: row.REG_DATE,
+        updateDt: row.UPDATE_DATE
+    }
 }
